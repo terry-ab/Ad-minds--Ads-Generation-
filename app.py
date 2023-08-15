@@ -35,11 +35,11 @@ def generate_image():
   prompt = request.form['prompt-input']
   print(f"Generating an image of {prompt}")
 
-  #image = pipe(prompt).images[0]
+  image = pipe(prompt).images[0]
   print("Image generated! Converting image ...")
   
   buffered = BytesIO()
-  #image.save(buffered, format="PNG")
+  image.save(buffered, format="PNG")
   img_str = base64.b64encode(buffered.getvalue())
   img_str = "data:image/png;base64," + str(img_str)[2:-1]
 
