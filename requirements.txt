@@ -9,4 +9,4 @@ ftfy
 accelerate
 pyngrok==6.0.0
 flask-ngrok
-Flask==2.3.2
+Flask
