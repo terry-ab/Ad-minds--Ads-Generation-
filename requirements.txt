@@ -1,0 +1,14 @@
+Pillow==10.0.0
+diffusers==0.16.1
+python-dotenv
+huggingface_hub ==0.16.4
+torch==2.0.1+cu118
+transformers==4.31.0
+scipy
+ftfy
+accelerate
+pyngrok==6.0.0
+flask-ngrok
+Flask==2.3.2
+os
+io

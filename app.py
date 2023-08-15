@@ -1,11 +1,19 @@
 from flask_ngrok import run_with_ngrok
 from flask import Flask, render_template, request
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 import torch
 from diffusers import StableDiffusionPipeline
 
 import base64
 from io import BytesIO
+
+#Login to the Hugging Face Hub
+tokens= os.getenv('ACCESS_TOKEN')
+from huggingface_hub import login
+login(tokens)
 
 # Load model
 pipe = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-2", revision="fp16", torch_dtype=torch.float16).to("cuda")
