@@ -44,7 +44,7 @@ def generate_image():
   img_str = "data:image/png;base64," + str(img_str)[2:-1]
 
   print("Sending image ...")
-  return render_template('index.html', generated_image=img_str)
+  return render_template('submit.html', generated_image=img_str)
 
 
 if __name__ == '__main__':

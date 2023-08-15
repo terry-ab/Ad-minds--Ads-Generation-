@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='icon.png') }}" />
+    <title>ADMINDS AI</title>
+</head>
+<body>
+    <div class="container">
+        <h1>ADMINDS AI</h1>
+        <form action="/submit-prompt" method="post">
+            <label for="prompt-input">Enter a prompt:</label>
+            <input type="text" id="prompt-input" name="prompt-input" required>
+            <button type="submit">Generate Image</button>
+        </form>
+        {% if generated_image %}
+        <div class="generated-image">
+            <img src="{{ generated_image }}" alt="Generated Image">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
