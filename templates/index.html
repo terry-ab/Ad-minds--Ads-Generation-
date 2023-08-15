@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='icon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.png') }}" />
     <title>ADMINDS AI</title>
 </head>
 <body>
@@ -13,6 +13,8 @@
         <form action="/submit-prompt" method="post">
             <label for="prompt-input">Enter a prompt:</label>
             <input type="text" id="prompt-input" name="prompt-input" required>
+            <input type="checkbox" id="placeholder-checkbox"> <!-- New checkbox -->
+            <label for="placeholder-checkbox">Gopro-Camera</label> <!-- Label for the checkbox -->
             <button type="submit">Generate Image</button>
         </form>
         {% if generated_image %}
@@ -21,5 +23,42 @@
         </div>
         {% endif %}
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const placeholderCheckbox = document.getElementById("placeholder-checkbox");
+            const promptInput = document.getElementById("prompt-input");
+
+            placeholderCheckbox.addEventListener("change", function () {
+                const cursorPosition = promptInput.selectionStart;
+                const currentValue = promptInput.value;
+                
+                if (placeholderCheckbox.checked) {
+                    // Insert the placeholder token at the cursor position
+                    const newValue =
+                        currentValue.substring(0, cursorPosition) +
+                        "\u003Cgopro-camera>" +
+                        currentValue.substring(cursorPosition);
+
+                    promptInput.value = newValue;
+
+                    // Move the cursor after the inserted token
+                    promptInput.selectionStart = cursorPosition + "\u003Cgopro-camera>".length;
+                    promptInput.selectionEnd = cursorPosition + "\u003Cgopro-camera>".length;
+                } else {
+                    // Remove the placeholder token
+                    const newValue =
+                        currentValue.substring(0, cursorPosition - "\u003Cgopro-camera>".length) +
+                        currentValue.substring(cursorPosition);
+
+                    promptInput.value = newValue;
+
+                    // Move the cursor to the previous position
+                    promptInput.selectionStart = cursorPosition - "\u003Cgopro-camera>".length;
+                    promptInput.selectionEnd = cursorPosition - "\u003Cgopro-camera>".length;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

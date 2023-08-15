@@ -18,7 +18,7 @@ body {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Add a white background with 80% opacity */
     border-radius: 10px;
-    height: 600px; /* Increase the container height */
+    height: 300px; /* Increase the container height */
     position: relative;
     z-index: 1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow */
@@ -63,6 +63,26 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.checkbox-label-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 80px; /* Adjust the margin as needed */
+}
+
+/* Style for the checkbox */
+#placeholder-checkbox {
+    transform: scale(2.0); /* Increase the size of the checkbox */
+    margin-right: 0px; /* Add some space between the checkbox and label */
+    margin-top: 20px;
+    margin-left: 60px;
+    align-self: flex-start;
+}
+/* Style for the checkbox label */
+#placeholder-checkbox + label {
+    margin: 0.2; /* Reset default margin */
+    margin-left: 5px; /* Add some space between checkbox and label */
+    margin-right: 650px;
 }
 
 /* Styling for the generated image */
