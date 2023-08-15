@@ -1,0 +1,88 @@
+/* Reset some default styles */
+body, h1, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Styling for the container */
+.container {
+    max-width: 800px; /* Increase the container width */
+    width: 80%; /* Set container width relative to its parent */
+    margin: 120px auto 0; /* Increase the margin-top to move it further down */
+    padding: 30px; /* Increase the container padding */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a white background with 80% opacity */
+    border-radius: 10px;
+    height: 600px; /* Increase the container height */
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Helvetica', sans-serif;
+    text-decoration: underline;
+}
+
+/* Styling for the form */
+form {
+    margin-bottom: 20px;
+    display: flex; /* Display the label, input, and button in a column */
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 20px; /* Increase the margin-top for the label */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 15px; /* Add curved edges to the textbox */
+    margin-top: 15px; /* Increase the margin-top for the textbox */
+}
+
+button {
+    margin-top: 15px; /* Increase the margin-top for the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for the generated image */
+.generated-image {
+    margin-top: 20px;
+}
+
+/* Background image with transparency */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.4; /* Adjust the opacity to your preference */
+    z-index: -1;
+}
