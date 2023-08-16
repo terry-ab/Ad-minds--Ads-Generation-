@@ -7,7 +7,5 @@ transformers==4.31.0
 scipy
 ftfy
 accelerate
-pyngrok==4.1.1
-flask-ngrok
 Flask
 openai

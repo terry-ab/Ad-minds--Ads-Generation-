@@ -1,4 +1,3 @@
-from flask_ngrok import run_with_ngrok
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 load_dotenv()
@@ -65,4 +64,4 @@ def generate_image():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port='5000', debug=True)
