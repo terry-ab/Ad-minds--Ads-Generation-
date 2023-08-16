@@ -34,7 +34,6 @@ pipe.load_textual_inversion(repo_id_embeds)
 
 # Start flask app and set to ngrok
 app = Flask(__name__)
-run_with_ngrok(app)
 
 @app.route('/')
 def initial():
