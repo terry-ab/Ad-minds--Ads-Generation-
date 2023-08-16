@@ -10,12 +10,13 @@
 <body>
     <div class="container">
         <h1>ADMINDS AI</h1>
-        <form action="/submit-prompt" method="post">
+        <form action="/submit-prompt" method="post" id="form">
             <label for="prompt-input">Enter a prompt:</label>
             <input type="text" id="prompt-input" name="prompt-input" required>
-            <input type="checkbox" id="placeholder-checkbox"> <!-- New checkbox -->
-            <label for="placeholder-checkbox">Gopro-Camera</label> <!-- Label for the checkbox -->
-            <button type="submit">Generate Image</button>
+            <input type="checkbox" id="placeholder-checkbox">
+            <label for="placeholder-checkbox">Gopro Camera</label>
+            <button type="submit">Generate Ad</button>
+            <div class="loader" id="loader"></div> 
         </form>
         {% if generated_image %}
         <div class="generated-image">
@@ -28,6 +29,9 @@
         document.addEventListener("DOMContentLoaded", function () {
             const placeholderCheckbox = document.getElementById("placeholder-checkbox");
             const promptInput = document.getElementById("prompt-input");
+            const form = document.getElementById("form");
+            const generateButton = document.querySelector("button[type='submit']");
+            const loader = document.getElementById("loader");
 
             placeholderCheckbox.addEventListener("change", function () {
                 const cursorPosition = promptInput.selectionStart;
@@ -58,6 +62,18 @@
                     promptInput.selectionEnd = cursorPosition - "\u003Cgopro-camera>".length;
                 }
             });
+
+            generateButton.addEventListener("click", function () {
+                // Show the loader and hide the button
+                generateButton.style.display = "none";
+                loader.style.display = "block";
+
+                // Simulate a delay (replace with actual form submission)
+                setTimeout(function () {
+                    form.submit();
+                }, 2000); // Adjust the delay time as needed
+            });
+
         });
     </script>
 </body>

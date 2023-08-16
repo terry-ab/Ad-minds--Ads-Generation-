@@ -10,3 +10,4 @@ accelerate
 pyngrok==4.1.1
 flask-ngrok
 Flask
+openai
