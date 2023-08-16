@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask_ngrok import run_with_ngrok
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -34,6 +35,7 @@ pipe.load_textual_inversion(repo_id_embeds)
 
 # Start flask app and set to ngrok
 app = Flask(__name__)
+run_with_ngrok(app)
 
 @app.route('/')
 def initial():
@@ -63,4 +65,4 @@ def generate_image():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000', debug=True)
+    app.run()
