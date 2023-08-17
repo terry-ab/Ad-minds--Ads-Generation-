@@ -5,7 +5,7 @@ huggingface_hub ==0.16.4
 torch==2.0.1+cu118
 transformers==4.31.0
 scipy
-pyngrok
+pyngrok==4.1.1
 flask_ngrok
 ftfy
 accelerate
