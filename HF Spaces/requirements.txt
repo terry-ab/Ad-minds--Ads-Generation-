@@ -1,0 +1,11 @@
+Pillow
+diffusers==0.16.1
+python-dotenv
+numpy
+huggingface_hub==0.16.4
+torch
+transformers==4.31.0
+scipy
+ftfy
+accelerate
+openai
