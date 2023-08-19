@@ -4,6 +4,7 @@ Adminds AI is a powerful tool designed to streamline your social media advertisi
 
 Adminds AI delivers engaging content ready for your campaigns. Elevate your social media strategy with Adminds AI's automated ad generation, ensuring your brand stands out in the digital landscape.
 
+Here the link check it out!: https://huggingface.co/spaces/terry-ab/ad-generation (if the app is not responding it's probably disabled due to gpu pricing,it's costly).
 ## Methodology Overview
 Adminds AI is a comprehensive ad generation platform that seamlessly blends cutting-edge technologies. The OpenAI API powers dynamic text responses, creating engaging ad content from user prompts. Gradio's user interface enhances interaction, while stable diffusion models fine-tuned on a rich image dataset generate captivating visuals. Hugging Face's community library efficiently manages trained models, and Hugging Face Spaces simplifies deployment for user accessibility. Adminds AI harmonizes text generation, image synthesis, and deployment, offering an all-inclusive solution for crafting compelling ads tailored for social media marketing campaigns.
 
