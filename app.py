@@ -12,7 +12,7 @@ import base64
 from io import BytesIO
 
 #Openai text
-'''openai.api_key = os.getenv('OPEN_AI_KEY')
+openai.api_key = os.getenv('OPEN_AI_KEY')
 def get_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
@@ -21,7 +21,7 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
         temperature=0, # this is the degree of randomness of the model's output
     )
     return response.choices[0].message["content"]
-'''
+
 #Login to the Hugging Face Hub
 tokens= os.getenv('ACCESS_TOKEN')
 from huggingface_hub import login
